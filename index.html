@@ -8,26 +8,32 @@
   </head>
   <body>
     <div class="calculator-container">
-      <div class="display"></div>
-      <div class="digits">
-        <button value="1">1</button>
-        <button value="2">2</button>
-        <button value="3">3</button>
-        <button value="4">4</button>
-        <button value="5">5</button>
-        <button value="6">6</button>
-        <button value="7">7</button>
-        <button value="8">8</button>
-        <button value="9">9</button>
-        <button value="0">0</button>
+      <div class="display">
+        <span id="display-content">0</span>
       </div>
-      <div class="operators">
-        <button value="+">+</button>
-        <button value="-">-</button>
-        <button value="*">*</button>
-        <button value="/">/</button>
-        <button value="=">=</button>
-        <button value="clear">clear</button>
+      <div class="buttons">
+        <div class="digits">
+          <button value="9">9</button>
+          <button value="8">8</button>
+          <button value="7">7</button>
+          <button value="6">6</button>
+          <button value="5">5</button>
+          <button value="4">4</button>
+          <button value="3">3</button>
+          <button value="2">2</button>
+          <button value="1">1</button>
+          <div class="lower-buttons">
+            <button value="0">0</button>
+            <button type="button">c</button>
+            <button id="equal" type="button">=</button>
+          </div>
+        </div>
+        <div class="operators">
+          <button value="+">+</button>
+          <button value="-">-</button>
+          <button value="*">*</button>
+          <button value="/">/</button>
+        </div>
       </div>
     </div>
   </body>
