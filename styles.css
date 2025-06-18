@@ -60,6 +60,7 @@ body {
   background-color: #ebeaea;
   font-weight: bold;
   aspect-ratio: 1;
+  cursor: pointer;
 }
 #equal {
   background-color: #f5a34f;
@@ -68,7 +69,9 @@ body {
 #display-content {
   display: inline-block;
   width: 100%;
-  font-size: 2rem;
+  font-size: 1.6rem;
   text-align: right;
   font-family: "7-font";
+  color: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
 }
