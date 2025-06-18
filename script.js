@@ -63,3 +63,4 @@ clearButton.addEventListener("click", () => (displayContent.textContent = ""));
 equalButton.addEventListener("click", () => {
   showDisplay();
 });
+//
