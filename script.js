@@ -17,7 +17,7 @@ const multiply = (a, b) => {
 };
 
 const divide = (a, b) => {
-  return (a / b).toFixed(2);
+  return Math.floor(a / b) === a / b ? a / b : (a / b).toFixed(2);
 };
 
 const operate = (operator, a, b) => {
@@ -28,22 +28,21 @@ const operate = (operator, a, b) => {
 };
 
 const showDisplay = (string = "") => {
-  if (/[+*-/]/.test(displayContent.textContent)) {
+  if (/[\+\*\-/]/.test(displayContent.textContent)) {
     const regex = displayContent.textContent.match(
-      /^([+-]?[0-9]+[.]?[0-9]*)([*+-/])([0-9]+)$/
+      /^(\d+\.?\d*)([-+*/])(\d+\.?\d*)$/
     );
 
-    const opr = regex[2];
-    const num1 = parseFloat(regex[1]);
-    const num2 = parseInt(regex[3]);
+    if (regex) {
+      const opr = regex[2];
+      const num1 = Number(regex[1]);
+      const num2 = Number(regex[3]);
 
-    if (!isNaN(num1) && !isNaN(num2)) {
       const result = operate(opr, num1, num2);
-
       displayContent.textContent =
-        result == Infinity ? "can't divide by 0" : result + string;
+        result == Infinity ? "can't divide by 0" : `${result}${string}`;
     }
-  } else if (/[0-9]+/.test(displayContent.textContent)) {
+  } else if (/^([+-]?\d+)/.test(displayContent.textContent)) {
     displayContent.textContent += string;
   }
 };
